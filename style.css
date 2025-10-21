@@ -1,0 +1,857 @@
+/* --- Polished Blue Horizon Theme --- */
+:root {
+    --primary-blue: #004E89;
+    --heading-blue: #003B73;
+    --secondary-aqua: #00A8E8;
+    --accent-green: #00B894;
+    --bg-white: #FFFFFF;
+    --bg-light-gray: #F8F9FB;
+    --footer-navy: #012A4A;
+    --text-primary: #333333;
+    --text-secondary: #555555;
+    --white-color: #FFFFFF;
+    --header-height: 80px; /* Increased height for better spacing */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
+    color: var(--text-primary);
+    background-color: var(--bg-white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+    color: var(--heading-blue);
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 15px;
+    color: var(--text-secondary);
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-aqua);
+    font-weight: 600;
+}
+
+/* --- Polished Header --- */
+header {
+    width: 90%;
+    max-width: 1200px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 78, 137, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Reverted to space-between for the floating block style */
+    align-items: center;
+    height: var(--header-height);
+    padding: 0 30px; /* Added padding inside the header */
+}
+
+.nav-logo img {
+    height: 50px; /* Slightly adjusted logo size */
+    width: auto;
+    vertical-align: middle; /* Ensures it aligns well with text */
+}
+
+/* --- Header Logo Text Color Change --- */
+
+.logo-text {
+    color: var(--primary-blue); /* This changes the text color to Aqua Cyan */
+}
+
+/* Optional: Adjust vertical alignment if needed */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds space between the logo image and the text */
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+}
+
+.nav-item {
+    margin-left: 30px; /* Increased spacing */
+}
+
+.nav-link {
+    color: var(--primary-blue);
+    font-weight: 600;
+    transition: color 0.3s ease;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent; /* Prepare for a subtle hover effect */
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--secondary-aqua);
+    border-bottom-color: var(--secondary-aqua); /* Smooth underline appears on hover */
+}
+
+
+/* --- Hero Section with Video Background --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+#heroVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover; /* Changed back to cover for a full-screen feel */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 59, 115, 0.6); /* Adjusted overlay to match the Blue theme */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    color: var(--white-color);
+}
+
+.hero-content h1 {
+    color: var(--white-color);
+    font-size: 3.8rem;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.hero-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero .btn-secondary {
+    border-color: var(--white-color);
+    color: var(--white-color);
+}
+.hero .btn-secondary:hover {
+    background-color: var(--white-color);
+    color: var(--primary-blue);
+}
+
+
+/* --- Polished UI Elements --- */
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background-color: var(--secondary-aqua);
+    color: var(--white-color);
+    box-shadow: 0 4px 15px rgba(0, 168, 232, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 168, 232, 0.4);
+}
+
+section {
+    padding: 100px 0; /* Increased padding for more breathing room */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+}
+
+
+/* --- Polished Glimpse & Card Sections --- */
+.glimpse:nth-child(even) {
+    background: var(--bg-light-gray);
+}
+.glimpse-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px; /* Increased gap */
+    align-items: center;
+}
+.glimpse-visual img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 78, 137, 0.15);
+}
+
+.solution-card {
+    background: var(--bg-white);
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    text-align: center;
+    flex: 1;
+    border-bottom: 4px solid var(--secondary-aqua);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.solution-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.solution-card i {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+
+/* --- Polished Contact Preview Section --- */
+
+.contact-preview {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--bg-light-gray); /* Use the light gray background */
+}
+
+/* Ensure text is dark to be readable on the light background */
+.contact-preview h2 {
+    color: var(--heading-blue);
+}
+
+.contact-preview p {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+/* --- Slideshow Styles --- */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 78, 137, 0.15);
+}
+.slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; }
+.slide.active { opacity: 1; }
+.slide img { width: 100%; height: 100%; object-fit: cover; }
+
+
+/* --- LAYOUT FIXES (Consolidated) --- */
+.stats-counter, .solutions-cards, .training-features, .quotes-container, .social-icons, .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+.stats-counter, .solutions-cards { justify-content: space-around; }
+.team-grid, .contact-grid, .training-grid, .impact-grid, .key-highlights, .solution-grid {
+    display: grid;
+    gap: 30px;
+    align-items: start;
+}
+.team-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.contact-grid, .training-grid { grid-template-columns: 1fr 1fr; }
+.impact-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.key-highlights { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.solution-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.highlight-item i { font-size: 3rem; margin-bottom: 15px; }
+
+
+/* --- Footer --- */
+footer {
+    background: var(--footer-navy);
+    color: var(--white-color);
+    padding: 50px 0;
+    text-align: center;
+}
+.footer-links a { color: var(--white-color); font-weight: 500; }
+.social-icons a { color: var(--white-color); font-size: 1.5rem; margin: 0 10px; transition: color 0.3s; }
+.social-icons a:hover { color: var(--secondary-aqua); }
+
+/* ---
+============================================================
+   REDESIGN FOR SOLUTIONS, TRAINING, IMPACT, TEAM, CONTACT
+============================================================
+--- */
+
+/* --- Universal Page Styles --- */
+.page-header {
+    background: var(--bg-light-gray);
+    padding: 140px 0 80px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-top: -15px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Solutions Page Redesign --- */
+.solution-category {
+    padding: 40px 0;
+    border-bottom: 1px solid #eee;
+}
+.solution-category:last-of-type {
+    border-bottom: none;
+}
+.solution-category h2 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+.solution-category i {
+    color: var(--secondary-aqua);
+}
+
+.solution-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.solution-item {
+    background: var(--bg-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 78, 137, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.solution-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 78, 137, 0.15);
+}
+.solution-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+.solution-item h4 {
+    color: var(--heading-blue);
+    padding: 20px;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+
+/* --- Training Page Redesign --- */
+.training-section {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+.training-details h2 {
+    font-size: 2.2rem;
+}
+.program-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+.program-list li {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.program-list i {
+    color: var(--accent-green);
+    font-size: 1.2rem;
+}
+
+.approach-section {
+    background: var(--bg-light-gray);
+}
+.feature-item {
+    text-align: center;
+}
+.feature-item i {
+    font-size: 3rem;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+/* ---
+============================================================
+   TRAINING PAGE REDESIGN ("BREATHABLE" LAYOUT)
+============================================================
+--- */
+
+/* Remove the old, cramped grid layout */
+.training-grid {
+    display: block; /* This removes the two-column grid */
+}
+
+/* Style the placeholder image and add space below it */
+.training-page-image {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 60px auto; /* Center the image and add space */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 78, 137, 0.15);
+}
+
+/* Center the main content sections */
+.training-programs,
+.training-approach {
+    max-width: 800px;
+    margin: 0 auto 60px auto; /* Center the sections and add space between them */
+    text-align: center;
+}
+
+/* Redesign the "Programs Offered" list */
+.training-programs ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Add space between list items */
+    margin-top: 30px;
+}
+
+.training-programs ul li {
+    background: var(--bg-white);
+    padding: 15px 25px;
+    border-radius: 50px; /* Pill shape */
+    border: 1px solid #e0e0e0;
+    font-weight: 600;
+    color: var(--primary-blue);
+    box-shadow: 0 4px 10px rgba(0, 78, 137, 0.05);
+}
+
+/* Improve spacing on the "Our Approach" section */
+.training-approach h2 {
+    margin-bottom: 40px;
+}
+
+/* Style the Call-to-Action button section */
+.cta-buttons {
+    background: var(--bg-light-gray);
+    border-radius: 12px;
+    padding: 50px 30px;
+    text-align: center;
+    max-width: 800px;
+    margin: 40px auto 0 auto;
+}
+
+.cta-buttons h2 {
+    margin-bottom: 25px;
+}
+
+.cta-buttons .btn {
+    margin: 0 10px;
+}
+
+/* --- Impact Page Redesign --- */
+.timeline-section {
+    padding-bottom: 0;
+}
+.quotes-section {
+    background: var(--bg-light-gray);
+}
+.impact-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+
+/* --- Team Page Redesign --- */
+.team-member {
+    background: var(--bg-white);
+    border-radius: 12px;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 78, 137, 0.1);
+    position: relative;
+}
+.team-member img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: top center; /* Focus on the top of the image */
+}
+.member-info {
+    padding: 20px;
+}
+.member-info p {
+    color: var(--secondary-aqua);
+    font-weight: 600;
+}
+.leader-highlight {
+    margin-top: 80px;
+    background: var(--bg-light-gray);
+    border-radius: 12px;
+    border-left: 5px solid var(--accent-green);
+    padding: 40px;
+}
+
+
+/* --- Contact Page Redesign --- */
+.contact-grid {
+    grid-template-columns: 1fr 1.2fr; /* Give more space to the form */
+    gap: 60px;
+}
+.contact-details {
+    list-style: none;
+    padding: 0;
+}
+.contact-details li {
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+.contact-details i {
+    font-size: 1.5rem;
+    color: var(--secondary-aqua);
+    margin-right: 20px;
+    margin-top: 5px;
+    width: 25px;
+}
+.map-container {
+    margin-top: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 300px;
+    box-shadow: 0 8px 25px rgba(0, 78, 137, 0.1);
+}
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ---
+============================================================
+   CONTACT FORM POLISH & REDESIGN
+============================================================
+--- */
+
+.contact-form {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 78, 137, 0.12);
+    border: 1px solid #e9ecef;
+}
+
+.contact-form h3 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--heading-blue);
+    font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px; /* Slightly sharper radius for inputs */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--secondary-aqua);
+    box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.2); /* Adds a glow effect */
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.btn-gradient {
+    width: 100%;
+    padding: 16px 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--secondary-aqua));
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 168, 232, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 168, 232, 0.45);
+}
+
+/* --- Impact Page Image Grid Fix --- */
+
+.impact-grid img {
+    width: 100%; /* Make each image fill the width of its grid column */
+    height: 250px; /* Give all images a consistent height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 12px; /* Match the rounded corners of other elements */
+    box-shadow: 0 8px 25px rgba(0, 78, 137, 0.1); /* Add a consistent shadow */
+}
+
+/* ---
+============================================================
+   IMPACT PAGE QUOTES SECTION REDESIGN
+============================================================
+--- */
+
+.quotes-section {
+    background: var(--bg-light-gray);
+}
+
+.quotes-container {
+    display: grid; /* Use grid for a more robust layout */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Responsive columns */
+    gap: 30px;
+}
+
+.quote-card {
+    background: var(--bg-white);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 78, 137, 0.1);
+    border: 1px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+    border-top: 4px solid var(--accent-green); /* Use the accent green for a highlight */
+}
+
+/* Remove the old ::before pseudo-element style */
+.quote-card::before {
+    content: '\f10d'; /* Font Awesome quote-left icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: var(--secondary-aqua);
+    margin-bottom: 15px;
+    opacity: 1; /* Make the icon fully visible */
+    position: static; /* Reset position from old style */
+}
+
+.quote-card p {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0;
+    flex-grow: 1; /* Allows the paragraph to fill the space */
+}
+
+/* ---
+============================================================
+   FOOTER REDESIGN (IMPROVED SPACING)
+============================================================
+--- */
+
+footer {
+    background: var(--footer-navy);
+    color: rgba(255, 255, 255, 0.8);
+    /* Increased top padding for more vertical space */
+    padding: 80px 0 0 0; 
+    text-align: left;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Increased the gap between columns */
+    gap: 60px; 
+    padding-bottom: 50px;
+}
+
+.footer-col h4 {
+    font-size: 1.1rem;
+    color: var(--white-color);
+    /* Increased space below the headings */
+    margin-bottom: 25px; 
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-logo img {
+    height: 50px;
+    /* Increased space below the logo */
+    margin-bottom: 20px; 
+}
+
+.footer-about {
+    font-size: 0.9rem;
+    line-height: 1.7; /* Increased line height for readability */
+}
+
+.footer-links,
+.footer-contact {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-links li,
+.footer-contact li {
+    /* Increased space between each link/contact item */
+    margin-bottom: 15px; 
+}
+
+.footer-links a,
+.footer-contact a {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-aqua);
+    padding-left: 5px;
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.footer-contact i {
+    color: var(--secondary-aqua);
+    margin-top: 5px;
+}
+
+.footer .social-icons {
+    justify-content: flex-start;
+    /* Increased space between social icons */
+    gap: 20px; 
+}
+
+.footer .social-icons a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.6rem; /* Slightly larger icons */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: var(--secondary-aqua);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 25px 0; /* Increased padding */
+    margin-top: 50px; /* Increased space above the bottom bar */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Lighter border color */
+}
+
+/* ---
+============================================================
+   VIDEO PRELOADER STYLES (FULLSCREEN FIX)
+============================================================
+--- */
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background-color: var(--footer-navy); /* Fallback color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+/* This is the key new rule */
+#preloader video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* This forces the video to cover the entire screen */
+}
+
+/* This class will be added by JavaScript to hide the preloader */
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
